@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         
         const nameInput = document.getElementById('name').value.trim();
-        const needsRadio = document.getElementById('needs-radio').value;
+        const needsRadio = document.querySelector('input[name="needs-radio"]:checked')?.value;
 
         if (nameInput === '') {
             alert('Por favor, insira um nome.');
@@ -52,9 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
             proceedButton.href = '1.html';
         }
     });
-});
 
-  // Reproduzir o MP3 automaticamente ao carregar a página
+    // Reproduzir o MP3 automaticamente ao carregar a página
     const audio = new Audio('sound.mp3');
     audio.volume = 0.5; // Ajuste o volume entre 0.0 e 1.0
     audio.play();
