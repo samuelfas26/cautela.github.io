@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Indicativos para Missões</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Gerador de Indicativos para Missões</h1>
         <form id="anagram-form">
             <label for="name">Digite seu nome:</label>
             <input type="text" id="name" name="name" required>
-            
+
             <label for="needs-radio">Vai precisar de rádio?</label>
             <select id="needs-radio" name="needs-radio" required>
                 <option value="">Selecione</option>
@@ -22,10 +24,10 @@
 
             <button type="submit">Vamos Começar</button>
         </form>
-        
+
         <!-- Resultado do indicativo -->
         <div id="result" style="display: none;"></div>
-        
+
         <!-- Botão para redirecionar para a folha de cautela -->
         <a id="proceed-button" href="#" style="display: none;">
             Crie sua folha de Cautela
@@ -34,8 +36,12 @@
             <span></span>
             <span></span>
         </a>
+
+        <!-- Áudio de fundo -->
+        <audio id="background-audio" src="sound.mp3" autoplay loop></audio>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
