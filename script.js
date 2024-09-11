@@ -53,3 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+  // Reproduzir o MP3 automaticamente ao carregar a página
+    const audio = new Audio('sound.mp3');
+    audio.volume = 0.5; // Ajuste o volume entre 0.0 e 1.0
+    audio.play();
+});
