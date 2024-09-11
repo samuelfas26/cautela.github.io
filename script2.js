@@ -1,12 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Recupera os dados do localStorage
+document.addEventListener('DOMContentLoaded', function () {
     const combatantData = JSON.parse(localStorage.getItem('combatantData'));
-
-    // Exibe os dados no console para verificar
-    console.log(combatantData);
-
     const materialsBody = document.getElementById('materials-body');
-    
     const selectedMaterials = JSON.parse(new URLSearchParams(window.location.search).get('materials')) || [];
 
     selectedMaterials.forEach(material => {
@@ -23,9 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const doc = new jsPDF();
 
         // Adiciona o título e os dados do combatente no PDF
-        doc.text('Materiais Cautelados', 10, 10);
+        doc.text('Folha de Cautela para Missão', 10, 10);
         doc.text(`Nome: ${combatantData.name}`, 10, 20);
-        doc.text(`Indicativo: ${combatantData.indicative}`, 10, 30);
+
+        if (combatantData.indicative) {
+            doc.text(`Indicativo: ${combatantData.indicative}`, 10, 30);
+        }
 
         // Gera a tabela de materiais e quantidades
         doc.autoTable({
