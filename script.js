@@ -7,39 +7,48 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         
         const nameInput = document.getElementById('name').value.trim();
+        const needsRadio = document.getElementById('needs-radio').value;
+
         if (nameInput === '') {
             alert('Por favor, insira um nome.');
             return;
         }
 
-        const indicatives = [
-            'leão', 'tigre', 'elefante', 'girafa', 'zebra', 'macaco', 'leopardo', 'rinoceronte', 'hipopótamo',
-            'crocodilo', 'cobra', 'águia', 'falcão', 'corvo', 'pinguim', 'urso', 'lobo', 'raposa', 'coelho',
-            'guaxinim', 'esquilo', 'castor', 'tartaruga', 'golfinho', 'baleia', 'tubarão', 'cavalo', 'vaca',
-            'ovelha', 'porco', 'cabra', 'galinha', 'pato', 'ganso', 'pavão', 'flamingo', 'cisne', 'coruja',
-            'paca', 'mico', 'tamanduá', 'anta', 'jaguar', 'puma', 'porquinho-da-índia', 'roedor', 'camelo',
-            'canguru'
-        ];
+        if (needsRadio === 'sim') {
+            const indicatives = [
+                'leão', 'tigre', 'elefante', 'girafa', 'zebra', 'macaco', 'leopardo', 'rinoceronte', 'hipopótamo',
+                'crocodilo', 'cobra', 'águia', 'falcão', 'corvo', 'pinguim', 'urso', 'lobo', 'raposa', 'coelho',
+                'guaxinim', 'esquilo', 'castor', 'tartaruga', 'golfinho', 'baleia', 'tubarão', 'cavalo', 'vaca',
+                'ovelha', 'porco', 'cabra', 'galinha', 'pato', 'ganso', 'pavão', 'flamingo', 'cisne', 'coruja',
+                'paca', 'mico', 'tamanduá', 'anta', 'jaguar', 'puma', 'porquinho-da-índia', 'roedor', 'camelo',
+                'canguru'
+            ];
 
-        // Gera um indicativo aleatório da lista
-        const randomIndex = Math.floor(Math.random() * indicatives.length);
-        const indicativo = indicatives[randomIndex];
+            // Gera um indicativo aleatório da lista
+            const randomIndex = Math.floor(Math.random() * indicatives.length);
+            const indicativo = indicatives[randomIndex];
 
-        // Cria um objeto JSON com os dados
-        const combatantData = {
-            name: nameInput,
-            indicative: indicativo
-        };
+            // Cria um objeto JSON com os dados
+            const combatantData = {
+                name: nameInput,
+                indicative: indicativo
+            };
 
-        // Salva o objeto JSON no localStorage
-        localStorage.setItem('combatantData', JSON.stringify(combatantData));
+            // Salva o objeto JSON no localStorage
+            localStorage.setItem('combatantData', JSON.stringify(combatantData));
 
-        // Exibe o indicativo gerado
-        resultDiv.textContent = `Seu indicativo é: ${indicativo}`;
-        resultDiv.style.display = 'block';
+            // Exibe o indicativo gerado
+            resultDiv.textContent = `Seu indicativo é: ${indicativo}`;
+            resultDiv.style.display = 'block';
 
-        // Exibe o botão de redirecionamento
-        proceedButton.style.display = 'block';
-        proceedButton.href = '1.html';
+            // Exibe o botão de redirecionamento
+            proceedButton.style.display = 'block';
+            proceedButton.href = '1.html';
+        } else {
+            // Se não vai precisar de rádio, libera o botão de redirecionamento diretamente
+            resultDiv.style.display = 'none';
+            proceedButton.style.display = 'block';
+            proceedButton.href = '1.html';
+        }
     });
 });
