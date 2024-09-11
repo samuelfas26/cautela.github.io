@@ -16,12 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (needsRadio === 'sim') {
             const indicatives = [
-                'leão', 'tigre', 'elefante', 'girafa', 'zebra', 'macaco', 'leopardo', 'rinoceronte', 'hipopótamo',
-                'crocodilo', 'cobra', 'águia', 'falcão', 'corvo', 'pinguim', 'urso', 'lobo', 'raposa', 'coelho',
-                'guaxinim', 'esquilo', 'castor', 'tartaruga', 'golfinho', 'baleia', 'tubarão', 'cavalo', 'vaca',
-                'ovelha', 'porco', 'cabra', 'galinha', 'pato', 'ganso', 'pavão', 'flamingo', 'cisne', 'coruja',
-                'paca', 'mico', 'tamanduá', 'anta', 'jaguar', 'puma', 'porquinho-da-índia', 'roedor', 'camelo',
-                'canguru'
+                'Onça-pintada', 'Jacaré', 'Arara-azul', 'Capivara', 'Anta', 
+                'Jabuti', 'Tamanduá-bandeira', 'Cervo-do-pantanal', 'Macaco-prego', 
+                'Rã', 'Iguana', 'Paca', 'Robalo', 'Tuiuiú', 'Mula', 'Quati', 
+                'Jararaca', 'Serpente', 'Gavião-real', 'Peixe-boi', 'Formiga', 
+                'Inseto', 'Suará', 'Curicaca', 'Búfalo', 'Lobo-guará', 
+                'Pirarucu', 'Urubu', 'Cacatua', 'Gambá', 'Gato-do-mato', 
+                'Ariranha', 'Mico-leão-dourado'
             ];
 
             // Gera um indicativo aleatório da lista
